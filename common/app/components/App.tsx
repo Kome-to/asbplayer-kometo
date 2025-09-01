@@ -182,6 +182,13 @@ function RenderVideo({ searchParams, ...props }: RenderVideoProps) {
         addBlobUrl(videoFile);
     }, [videoFile]);
 
+    useEffect(() => {
+        // Prevent default right click menu on the window
+        window.oncontextmenu = (event) => {
+            event.preventDefault();
+        };
+    }, []);
+
     return <VideoPlayer videoFile={videoFile} channel={channel} popOut={popOut} {...props} />;
 }
 

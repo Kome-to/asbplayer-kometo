@@ -497,6 +497,7 @@ export default function VideoPlayer({
                     // Force volume to 1 on mobile - users can control device volume
                     videoRef.current.volume = 1;
                 }
+
             }
         },
         [clock, playerChannel, updatePlayerState]
